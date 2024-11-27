@@ -1,3 +1,4 @@
+import { Faq } from "@/components/faq";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Integration } from "@/components/integration";
@@ -14,6 +15,7 @@ const Home = () => {
       <Introducing />
       <Features />
       <Integration />
+      <Faq />
     </div>
   );
 };
