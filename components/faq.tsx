@@ -13,7 +13,7 @@ export const Faq: React.FC = () => {
             <span className="text-lime-400">answers</span>
           </h2>
         </div>
-        <div className="mt-12 md:max-w-xl mx-auto">
+        <div className="mt-14 md:max-w-xl mx-auto">
           <AccordionComponent />
         </div>
       </div>
