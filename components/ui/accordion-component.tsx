@@ -43,6 +43,7 @@ export const AccordionComponent: React.FC = () => {
     <Accordion type="single" collapsible className="w-full flex flex-col gap-6">
       {faqs.map((faq) => (
         <AccordionItem
+          key={faq.value}
           value={faq.value}
           className="border border-white/10 rounded-2xl bg-neutral-900 p-2"
         >

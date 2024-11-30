@@ -1,6 +1,6 @@
 import React from "react";
 import { Tag } from "./ui/tag";
-import { IntegrationCart } from "./integration-cart";
+import { IntegrationComponent } from "./integration-component";
 import figmaIcon from "@/public/images/figma-logo.svg";
 import notionIcon from "@/public/images/notion-logo.svg";
 import slackIcon from "@/public/images/slack-logo.svg";
@@ -41,6 +41,8 @@ const integrations = [
   },
 ];
 
+export type IntegrationsType = typeof integrations;
+
 export const Integration: React.FC = () => {
   return (
     <section className="mt-48 overflow-hidden">
@@ -52,20 +54,16 @@ export const Integration: React.FC = () => {
           </h2>
           <p className="text-white/50 mt-4 text-lg">
             Layers seamlessly connects with your favorite tools, making it easy
-            to plug into any workflow and collaborate across platfoems.
+            to plug into any workflow and collaborate across platforms.
           </p>
         </div>
-        <div className="h-[400px] lg:h-[800px] mt-8 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] md:columns-2">
-          <div className="flex flex-col gap-4 pb-4">
-            {integrations.map((integration) => (
-              <IntegrationCart
-                key={integration.name}
-                icon={integration.icon}
-                name={integration.name}
-                description={integration.description}
-              />
-            ))}
-          </div>
+        <div className="h-[400px] lg:h-[800px] mt-8 grid md:grid-cols-2 gap-4 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <IntegrationComponent integrations={integrations} />
+          <IntegrationComponent
+            integrations={integrations.slice().reverse()}
+            className="hidden md:flex flex-col"
+            reversed
+          />
         </div>
       </div>
     </section>

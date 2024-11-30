@@ -16,13 +16,13 @@ const features = [
 
 export const Features: React.FC = () => {
   return (
-    <section className="py-2 md:py-5">
+    <section className="py-2 md:py-5" id="Features">
       <div className="container">
         <div className="flex justify-center">
           <Tag>Features</Tag>
         </div>
         <h2 className="text-6xl text-center font-medium mt-6 max-w-2xl mx-auto">
-          <span className="md:flex">Where power meets </span>
+          <span>Where power meets </span>
           <span className="text-lime-400">simplicity</span>
         </h2>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">

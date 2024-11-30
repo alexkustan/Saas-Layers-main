@@ -1,5 +1,8 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
 import quantumLogo from "@/public/images/quantum.svg";
 import acmeLogo from "@/public/images/acme-corp.svg";
 import echoValleyLogo from "@/public/images/echo-valley.svg";
@@ -21,6 +24,23 @@ export const logos = [
 ];
 
 export const LogoTicker: React.FC = () => {
+  const tickerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tickerElement = tickerRef.current;
+
+    if (tickerElement) {
+      const width = tickerElement.scrollWidth;
+
+      gsap.to(tickerElement, {
+        x: -width,
+        duration: 20,
+        ease: "linear",
+        repeat: -1,
+      });
+    }
+  }, []);
+
   return (
     <section className="py-24 overflow-x-clip">
       <div className="container">
@@ -28,7 +48,7 @@ export const LogoTicker: React.FC = () => {
           Already chosen by these market leaders
         </h2>
         <div className="overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex gap-24 pr-24">
+          <div className="flex gap-24 pr-24" ref={tickerRef}>
             {logos.map((logo) => (
               <Image src={logo.image} key={logo.name} alt={logo.name} />
             ))}

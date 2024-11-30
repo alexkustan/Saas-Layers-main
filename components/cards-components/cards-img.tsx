@@ -3,6 +3,7 @@ import React from "react";
 import avatar1 from "@/public/images/avatar-ashwin-santiago.jpg";
 import avatar2 from "@/public/images/avatar-lula-meyers.jpg";
 import avatar3 from "@/public/images/avatar-florence-shaw.jpg";
+import { Ellipsis } from "lucide-react";
 
 export const CardsImg: React.FC = () => {
   return (
@@ -17,7 +18,9 @@ export const CardsImg: React.FC = () => {
         <Image src={avatar3} alt="Avatar 3" className="rounded-full" />
       </div>
       <div>
-        <div className="z-10 bg-neutral-700 size-16 rounded-full -ml-6" />
+        <div className="z-10 bg-neutral-700 size-16 rounded-full -ml-5 flex items-center justify-center">
+          <Ellipsis className="size-8" />
+        </div>
       </div>
     </div>
   );

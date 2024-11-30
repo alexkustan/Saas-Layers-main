@@ -10,12 +10,14 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { Button } from "./ui/button";
+import Image from "next/image";
+import logoImage from "@/public/images/logo.svg";
 
 export const BurgerMenu: React.FC = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="bg-[#0a0a0a]">
+        <Button className="bg-neutral-950 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -34,20 +36,34 @@ export const BurgerMenu: React.FC = () => {
           </svg>
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="bg-neutral-950">
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when youre done.
-          </SheetDescription>
+          <SheetTitle>
+            <Image
+              src={logoImage}
+              alt="layears logo"
+              className="h-9 md:h-auto w-auto ml-2"
+            />
+          </SheetTitle>
         </SheetHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4"></div>
+          <div className="grid  items-center gap-4">
+            <nav className="grid justify-center text-center gap-4">
+              <a href="/">Home</a>
+              <a href="#Features">Features</a>
+              <a href="">Integrations</a>
+              <a href="">FAQs</a>
+            </nav>
+            <Button className="border hover:bg-lime-400 hover:border-none hover:text-neutral-950 border-white h-12 rounded-full px-6 font-medium">
+              Log In
+            </Button>
+            <Button className=" text-black hover:text-white bg-lime-400 h-12 rounded-full px-6 font-medium">
+              Sign Up
+            </Button>
+          </div>
         </div>
         <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
+          <SheetClose asChild></SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>

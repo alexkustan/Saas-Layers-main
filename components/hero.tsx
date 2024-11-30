@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import designExample1 from "@/public/images/design-example-1.png";
 import designExample2 from "@/public/images/design-example-2.png";
+import { Pointer } from "./ui/pointer";
 
 export const Hero: React.FC = () => {
   return (
@@ -15,6 +16,13 @@ export const Hero: React.FC = () => {
         <div className="absolute -right-64 -top-16 hidden lg:block">
           <Image src={designExample2} alt="design example 2" />
         </div>
+        <div className="absolute lg:block  hidden left-56 top-96">
+          <Pointer name={"Alex"} />
+        </div>
+        <div className="absolute lg:block hidden right-80 -top-4">
+          <Pointer name={"Andrea"} color="red" />
+        </div>
+
         <div className="flex justify-center">
           <div className="rounded-full text-neutral-950 inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">
             ✨ $7.5M seed round raised
@@ -36,7 +44,7 @@ export const Hero: React.FC = () => {
           />
           <Button
             type="submit"
-            className=" text-black bg-lime-400 h-12 rounded-full px-6 font-medium"
+            className=" text-black hover:text-white bg-lime-400 h-12 rounded-full px-6 font-medium"
           >
             Sign Up
           </Button>

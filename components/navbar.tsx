@@ -29,10 +29,10 @@ export const Navbar: React.FC = () => {
           <div className="flex justify-end">
             <BurgerMenu />
             <div className="gap-4 md:flex hidden">
-              <Button className="border border-white h-12 rounded-full px-6 font-medium">
+              <Button className="border hover:bg-lime-400 hover:border-none hover:text-neutral-950 border-white h-12 rounded-full px-6 font-medium">
                 Log In
               </Button>
-              <Button className=" text-black bg-lime-400 h-12 rounded-full px-6 font-medium">
+              <Button className=" text-black hover:text-white bg-lime-400 h-12 rounded-full px-6 font-medium">
                 Sign Up
               </Button>
             </div>
